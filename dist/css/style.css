@@ -1,0 +1,38 @@
+/*-------General styles------------*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+/*-----------Header------------*/
+.header {
+  height: 20vh;
+  background-color: gray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.main {
+  height: 60vh;
+  background-color: blue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer {
+  height: 20vh;
+  width: 100%;
+  flex-basis: 100%;
+  background-color: lightgray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
