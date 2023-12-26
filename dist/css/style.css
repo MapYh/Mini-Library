@@ -23,7 +23,7 @@ body {
 /*-----------Main------------*/
 
 .main {
-  height: 60dvh;
+  height: 100%;
   background-color: ffffff;
   display: flex;
   align-items: center;
@@ -31,26 +31,20 @@ body {
   flex-direction: column;
 }
 
-.main__top {
+.main__books {
+  height: 100%;
   margin: auto;
   max-width: 60rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
-.main__lower {
-  margin: auto;
-  max-width: 60rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.main__card {
+.main__book {
   margin: 1rem;
   padding: 1rem;
-  width: 25dvw;
+  width: 13rem;
   height: 25dvh;
   background-color: red;
   display: flex;
@@ -59,18 +53,28 @@ body {
   flex-direction: column;
 }
 
-.main__card--styling {
+.main__book--styling {
   border-radius: 0.3rem;
+  color: white;
 }
 
 /*-----------Footer------------*/
 
 .footer {
+  margin: auto;
   height: 20dvh;
   width: 100%;
-  flex-basis: 100%;
   background-color: ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+}
+
+/*-----------Media queries------------*/
+
+@media only screen and (max-width: 500px) {
+  .main__books {
+    justify-content: center;
+  }
 }
