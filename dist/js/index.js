@@ -1,6 +1,6 @@
 import { getApi, apiUrl } from "./api.js";
 /*-----------Variables--------------*/
-let mainTopSectionForBooks = document.querySelector(".main__books");
+let mainSectionForBooks = document.querySelector(".main__books");
 let bookCard;
 let bookTitle;
 let bookAuthor;
@@ -10,7 +10,7 @@ Function that creates elements for the front covers for the books,
 and the title and author.*/
 async function createElementsForBook() {
     let data = await getApi(apiUrl);
-    console.log(data);
+    console.log("createfunc", data);
     for (let i = 0; i < Object.keys(data).length; i++) {
         bookCard = document.createElement("article");
         bookTitle = document.createElement("h2");
@@ -19,7 +19,10 @@ async function createElementsForBook() {
         bookCard.classList.add("main__book--styling");
         bookCard.append(bookTitle);
         bookCard.append(bookAuthor);
-        mainTopSectionForBooks.append(bookCard);
+        mainSectionForBooks.append(bookCard);
+        bookCard.addEventListener("click", () => {
+            console.log(true);
+        });
         getInformationForBook(i, data);
     }
     return data;
@@ -30,6 +33,4 @@ function getInformationForBook(index, data) {
     bookTitle.textContent = data[index].title;
     bookAuthor.textContent = data[index].author;
 }
-let bookCovers = document.querySelector(".main__books").childNodes;
-console.log(bookCovers);
 createElementsForBook();

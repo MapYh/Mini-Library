@@ -1,12 +1,11 @@
 /*-----------Imports--------------*/
 //Imports the interface from interface file to this file.
 import { bookValues } from "./interface.js";
-import { getApi, apiUrl } from "./api.js";
+import { getApi, apiUrl, savedData } from "./api.js";
 
 /*-----------Variables--------------*/
 
-let mainTopSectionForBooks: HTMLElement =
-  document.querySelector(".main__books");
+let mainSectionForBooks: HTMLElement = document.querySelector(".main__books");
 let bookCard: HTMLElement;
 let bookTitle: HTMLElement;
 let bookAuthor: HTMLElement;
@@ -18,7 +17,7 @@ Function that creates elements for the front covers for the books,
 and the title and author.*/
 async function createElementsForBook(): Promise<bookValues[]> {
   let data: bookValues[] = await getApi(apiUrl);
-  console.log(data);
+  console.log("createfunc", data);
   for (let i = 0; i < Object.keys(data).length; i++) {
     bookCard = document.createElement("article");
     bookTitle = document.createElement("h2");
@@ -27,7 +26,10 @@ async function createElementsForBook(): Promise<bookValues[]> {
     bookCard.classList.add("main__book--styling");
     bookCard.append(bookTitle);
     bookCard.append(bookAuthor);
-    mainTopSectionForBooks.append(bookCard);
+    mainSectionForBooks.append(bookCard);
+    bookCard.addEventListener("click", () => {
+      console.log(true);
+    });
     getInformationForBook(i, data);
   }
   return data;
@@ -39,8 +41,5 @@ function getInformationForBook(index: number, data: bookValues[]) {
   bookTitle.textContent = data[index].title;
   bookAuthor.textContent = data[index].author;
 }
-
-let bookCovers = document.querySelector(".main__books").childNodes;
-bookCovers.forEach(() => {});
 
 createElementsForBook();
