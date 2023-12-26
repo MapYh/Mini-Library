@@ -30,4 +30,6 @@ function getInformationForBook(index, data) {
     bookTitle.textContent = data[index].title;
     bookAuthor.textContent = data[index].author;
 }
+let bookCovers = document.querySelector(".main__books").childNodes;
+console.log(bookCovers);
 createElementsForBook();
