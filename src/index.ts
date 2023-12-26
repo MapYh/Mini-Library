@@ -16,7 +16,7 @@ let bookAuthor: HTMLElement;
 /*
 Function that creates elements for the front covers for the books,
 and the title and author.*/
-async function createElementsForBook(): Promise<{}> {
+async function createElementsForBook(): Promise<bookValues[]> {
   let data: bookValues[] = await getApi(apiUrl);
   console.log(data);
   for (let i = 0; i < Object.keys(data).length; i++) {
