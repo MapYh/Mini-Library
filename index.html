@@ -7,18 +7,44 @@
     <title>Mini Library</title>
   </head>
   <body>
-    <header class="header">
-      Mini-Library
-      <form>
-        <label for="search-field"></label>
-        <input type="text" id="search-field" placeholder="Search" required />
-        <input type="submit" id="search-field-btn" value="submit" />
-      </form>
-    </header>
-    <main class="main">
-      <section class="main__books"></section>
-    </main>
-    <footer class="footer">Footer</footer>
+    <article class="information-page hide">
+      <section class="information-page__closingX">&#x2190;</section>
+      <article class="information-page__bookCover">
+        <h2 class="information-page__bookCover-title">1</h2>
+        <figcaption class="information-page__bookCover-figcaption">
+          2
+        </figcaption>
+      </article>
+      <section class="information-page__description">
+        <article class="information-page__description-body">
+          <h2>3</h2>
+          <figcaption></figcaption>
+          <p>4</p>
+        </article>
+        <section class="information-page__description__extra-information">
+          <h3>5</h3>
+          <h3>6</h3>
+          <h3>7</h3>
+          <h3>8</h3>
+        </section>
+        <button>OH, i want to read it!</button>
+      </section>
+    </article>
+
+    <article class="information-wrapper">
+      <header class="header">
+        Mini-Library
+        <form>
+          <label for="search-field"></label>
+          <input type="text" id="search-field" placeholder="Search" required />
+          <input type="submit" id="search-field-btn" value="submit" />
+        </form>
+      </header>
+      <main class="main">
+        <section class="main__books"></section>
+      </main>
+      <footer class="footer">Footer</footer>
+    </article>
   </body>
   <script type="module" src="dist/js/index.js"></script>
   <script type="module" src="dist/js/interface.js"></script>

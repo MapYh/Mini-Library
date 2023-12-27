@@ -15,4 +15,4 @@ async function getApi(apiUrl) {
         console.log("Could not make api call.");
     }
 }
-export { getApi, apiUrl, savedData };
+export { getApi, apiUrl };

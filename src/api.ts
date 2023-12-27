@@ -19,4 +19,4 @@ async function getApi(apiUrl: string): Promise<bookValues[] | undefined> {
   }
 }
 
-export { getApi, apiUrl, savedData };
+export { getApi, apiUrl };
