@@ -6,7 +6,7 @@ import { getApi, apiUrl } from "./api.js";
 /*-----------Variables--------------*/
 let showMoreInformationpage = document.querySelectorAll(".hide");
 let backbutton = document.querySelector(".information-page__closingX");
-let informationWrapper = document.querySelector(".information-wrapper");
+let frontPageWrapper = document.querySelector(".frontPage-wrapper");
 let mainSectionForBooks: HTMLElement = document.querySelector(".main__books");
 let bookCard: HTMLElement;
 let bookTitle: HTMLElement;
@@ -49,15 +49,15 @@ function addEvents(i: number, data: bookValues[]): void {
 }
 
 function showMoreInformation(index: number, data: bookValues[]) {
+  document.body.style.background = "#3C3737";
   showMoreInformationpage[0].classList.toggle("hide");
-  informationWrapper.classList.toggle("hide");
-  console.log(showMoreInformationpage);
+  frontPageWrapper.classList.toggle("hide");
+
   bookCard.style.background = data[index].color;
   bookTitle.textContent = data[index].title;
   bookAuthor.textContent = data[index].author;
 
   /*  bookPlot = data[index].plot;
-
   bookAudience = data[index].audience;
   bookyear = data[index].year;
   bookPages = data[index].pages;
@@ -71,7 +71,8 @@ backbutton.addEventListener("click", () => {
 //when the information about a book is rendered on the page.
 function closeInformationPage() {
   showMoreInformationpage[0].classList.toggle("hide");
-  informationWrapper.classList.toggle("hide");
+  frontPageWrapper.classList.toggle("hide");
+  document.body.style.background = "white";
 }
 
 createElementsForBook();

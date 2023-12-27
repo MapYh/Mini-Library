@@ -10,10 +10,6 @@ body {
   height: 100%;
 }
 
-.hide {
-  display: none;
-}
-
 /*-----------Header------------*/
 .header {
   height: 20dvh;
@@ -62,6 +58,75 @@ body {
   color: white;
 }
 
+/*-----------Information page------------*/
+.information-wrapper {
+  margin-top: 10rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 4.25rem 4.25rem 4.25rem 4.25rem;
+}
+
+.information-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.information__page__cover-and-content {
+  display: flex;
+}
+
+.information-page__description__extra-information {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.information-page__description__extra-information-item {
+  width: 50%;
+  height: 15%;
+  background-color: grey;
+}
+.information-page__description {
+  padding: 1rem;
+  width: 40dvw;
+  max-width: 40rem;
+  color: white;
+}
+
+.information-page__description-body {
+  height: 100%/3;
+  background-color: lightgrey;
+}
+
+.information__btn-section {
+  height: 100% / 3;
+  background-color: blue;
+}
+
+.information-page__bookCover {
+  width: 40dvw;
+  height: 50dvw;
+  max-width: 40rem;
+  max-height: 50rem;
+}
+
+.information-page__closingX {
+  height: 25px;
+  width: 25px;
+  background-color: gray;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 120%;
+  margin-left: 1rem;
+}
+
+.hide {
+  display: none;
+}
 /*-----------Footer------------*/
 
 .footer {
