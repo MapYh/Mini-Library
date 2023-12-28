@@ -86,7 +86,6 @@ body {
 .information-page__description__extra-information-item {
   width: 50%;
   height: 15%;
-  background-color: grey;
 }
 .information-page__description {
   padding: 1rem;
@@ -97,12 +96,10 @@ body {
 
 .information-page__description-body {
   height: 100%/3;
-  background-color: lightgrey;
 }
 
 .information__btn-section {
   height: 100% / 3;
-  background-color: blue;
 }
 
 .information-page__bookCover {

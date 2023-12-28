@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="dist/css/style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Mini Library</title>
   </head>
   <body>
@@ -14,26 +14,34 @@
           <article
             class="information-page__bookCover main__book main__book--styling"
           >
-            <h2>1</h2>
-            <figcaption>2</figcaption>
+            <h2 class="title">1</h2>
+            <figcaption class="bookAuthor">2</figcaption>
           </article>
           <section class="information-page__description">
             <article class="information-page__description-body">
-              <h2>A wrinkle in time</h2>
-              <figcaption>3.5</figcaption>
-              <p>4</p>
+              <h2 class="title-body"></h2>
+              <figcaption class="figcaption-body"></figcaption>
+              <p class="plot"></p>
             </article>
             <section class="information-page__description__extra-information">
-              <h3 class="information-page__description__extra-information-item">
+              <h3
+                class="information-page__description__extra-information-item audience"
+              >
                 5
               </h3>
-              <h3 class="information-page__description__extra-information-item">
+              <h3
+                class="information-page__description__extra-information-item pages"
+              >
                 6
               </h3>
-              <h3 class="information-page__description__extra-information-item">
+              <h3
+                class="information-page__description__extra-information-item year"
+              >
                 7
               </h3>
-              <h3 class="information-page__description__extra-information-item">
+              <h3
+                class="information-page__description__extra-information-item publisher"
+              >
                 8
               </h3>
             </section>
@@ -49,8 +57,13 @@
         Mini-Library
         <form>
           <label for="search-field"></label>
-          <input type="text" id="search-field" placeholder="Search" required />
-          <input type="submit" id="search-field-btn" value="submit" />
+          <input
+            type="search"
+            id="search-field"
+            placeholder="Search"
+            required
+          />
+          <input type="submit" id="search-field-btn" value="Reset search" />
         </form>
       </header>
       <main class="main">
@@ -59,6 +72,6 @@
       <footer class="footer">Footer</footer>
     </article>
   </body>
-  <script type="module" src="dist/js/index.js"></script>
-  <script type="module" src="dist/js/interface.js"></script>
+  <script type="module" src="js/index.js"></script>
+  <script type="module" src="js/interface.js"></script>
 </html>

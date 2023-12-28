@@ -1,10 +1,10 @@
 export interface bookValues {
+  color: string;
   title: string;
   author: string;
-  publisher: string;
-  year: number;
-  pages: number;
   plot: string;
+  year: string;
   audience: string;
-  color: string;
+  pages: string;
+  publisher: string;
 }
