@@ -20,7 +20,7 @@ body {
   justify-content: center;
 }
 
-/*-----------Main------------*/
+/*-----------Main-frontpage------------*/
 
 .main {
   height: 100%;
@@ -31,6 +31,7 @@ body {
   flex-direction: column;
 }
 
+/*A box around all the books*/
 .main__books {
   height: 100%;
   margin: auto;
@@ -83,11 +84,6 @@ body {
   grid-template-rows: 4.25rem 4.25rem 4.25rem 4.25rem;
 }
 
-.information-page {
-  display: flex;
-  flex-direction: column;
-}
-
 .information__page__cover-and-content {
   display: flex;
 }
@@ -103,43 +99,22 @@ body {
 }
 
 .information-page__description__extra-information-item {
-  width: 50%;
-  height: 15%;
+  width: 24rem;
+  height: 77.01px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2.375rem;
+  line-height: 2.813rem;
+
+  color: #ffffff;
 }
 .information-page__description {
   padding: 1rem;
   width: 40dvw;
   max-width: 40rem;
   color: white;
-}
-
-.information__btn-section {
-  margin-top: 2rem;
-  width: 11.75rem;
-  height: 3rem;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  background: #eeeeee;
-  border-radius: 0.25rem;
-}
-
-.information__btn-section--styling {
-  width: 10.125rem;
-  height: 2.063rem;
-
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 1rem;
-  line-height: 150%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-
-  color: rgba(0, 0, 0, 0.8);
 }
 
 .information-page__bookCover {
@@ -159,6 +134,8 @@ body {
   border-radius: 0.125rem;
 }
 
+/*----Information backbutton---*/
+
 .information-page__closingX {
   height: 1.563rem;
   width: 1.563rem;
@@ -176,6 +153,9 @@ body {
 .hide {
   display: none;
 }
+
+/*----Extra information as publisher, 
+first published, audience, number of pages, plot and titles.---*/
 
 .title-body {
   width: 24rem;
@@ -223,7 +203,6 @@ body {
   font-weight: 700;
   font-size: 14px;
   line-height: 150%;
-  /* or 21px */
 
   color: rgba(255, 255, 255, 0.9);
 }
@@ -237,7 +216,6 @@ body {
   font-weight: 700;
   font-size: 14px;
   line-height: 150%;
-  /* or 21px */
 
   color: rgba(255, 255, 255, 0.9);
 }
@@ -251,7 +229,6 @@ body {
   font-weight: 700;
   font-size: 14px;
   line-height: 150%;
-  /* or 21px */
 
   color: rgba(255, 255, 255, 0.9);
 }
@@ -265,10 +242,41 @@ body {
   font-weight: 700;
   font-size: 14px;
   line-height: 150%;
-  /* or 21px */
 
   color: rgba(255, 255, 255, 0.9);
 }
+
+/*----Information btn---*/
+
+.information__btn-section {
+  margin-top: 2rem;
+  width: 11.75rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  background: #eeeeee;
+  border-radius: 0.25rem;
+}
+
+.information__btn-section--styling {
+  width: 10.125rem;
+  height: 2.063rem;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 150%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  color: rgba(0, 0, 0, 0.8);
+}
+
 /*-----------Footer------------*/
 
 .footer {
@@ -280,12 +288,4 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-}
-
-/*-----------Media queries------------*/
-
-@media only screen and (max-width: 500px) {
-  .main__books {
-    justify-content: center;
-  }
 }

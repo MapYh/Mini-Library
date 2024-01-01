@@ -61,7 +61,7 @@ function getInformationForBook(index: number, data: bookValues[]): void {
   bookCard.style.background = data[index].color;
   bookTitle.textContent = data[index].title;
   bookAuthor.textContent = data[index].author;
-  //Pushar in titlarna till en array.
+  //adds the titles to ann array.
   arrayOfBookNames.push(data[index].title);
 }
 
@@ -82,7 +82,7 @@ function showMoreInformation(index: number, data: bookValues[]) {
   bookTitle.textContent = data[index].title;
   bookAuthor.textContent = data[index].author;
 
-  //Information for the more information page.
+  //find all the places where the information needs to be placed.
   BookCardInfo = document.querySelector(".information-page__bookCover");
   BookTitleInfo = document.querySelector(".title");
   BookAuthorInfo = document.querySelector(".bookAuthor");
@@ -94,8 +94,11 @@ function showMoreInformation(index: number, data: bookValues[]) {
   BookTitleInfofigcaptionBody = document.querySelector(".figcaption-body");
   BookAudienceInfo = document.querySelector(".audience");
 
-  BookCardInfo.style.background = data[index].color;
+  //Change the cursor to auto so that it dosen't seem that you can click on the book cover.
   BookCardInfo.style.cursor = "auto";
+
+  //Write all the information to the page.
+  BookCardInfo.style.background = data[index].color;
   BookTitleInfo.textContent = data[index].title;
   BookTitleInfoBody.textContent = data[index].title;
   BookTitleInfofigcaptionBody.textContent = `by ${data[index].author}`;
@@ -110,7 +113,7 @@ function showMoreInformation(index: number, data: bookValues[]) {
 backbutton.addEventListener("click", () => {
   closeInformationPage();
 });
-//Function that hides the book covers an the search field
+//Function that hides the book covers and the search field
 //when the information about a book is rendered on the page.
 function closeInformationPage() {
   //Show the front page again and hide the information page when clicking on the backbutton.
@@ -134,8 +137,6 @@ search.addEventListener("input", function () {
       console.log(bookElements[i]);
       //Disables the display to the books that dont match the search term.
       bookElements[i + 1].style.display = "none";
-    } else {
-      console.log(true);
     }
   }
 });
