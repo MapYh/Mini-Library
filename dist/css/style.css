@@ -30,8 +30,7 @@ body {
   justify-content: space-around;
   flex-direction: column;
 }
-
-/*A box around all the books*/
+/*A wrapper for all the books on the frontpage*/
 .main__books {
   height: 100%;
   margin: auto;
@@ -288,4 +287,13 @@ first published, audience, number of pages, plot and titles.---*/
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+
+/*-----------Media queries------------*/
+/*Creates a different layout when the screen size changes.
+It centers the row in the screen*/
+@media only screen and (max-width: 500px) {
+  .main__books {
+    justify-content: center;
+  }
 }

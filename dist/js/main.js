@@ -125,7 +125,6 @@ search.addEventListener("input", function () {
         If a title to a book dosent contain the the search term the book i hiden.
         */
         if (!s.every((x) => arrayOfBookNames[i].toLocaleLowerCase().includes(x))) {
-            console.log(bookElements[i]);
             //Disables the display to the books that dont match the search term.
             bookElements[i + 1].style.display = "none";
         }
