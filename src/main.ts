@@ -45,7 +45,7 @@ async function createElementsForBook(): Promise<bookValues[]> {
     bookAuthor = document.createElement("figcaption");
     bookCard.classList.add("main__book");
     bookCard.classList.add("main__book--styling");
-    /* bookCard.classList.add("main__book-line"); */
+
     bookCard.append(bookTitle);
     bookCard.append(bookAuthor);
     mainSectionForBooks.append(bookCard);
@@ -80,10 +80,6 @@ function showMoreInformation(index: number, data: bookValues[]) {
   document.body.style.background = "#222222";
   showMoreInformationpage[0].classList.toggle("hide");
   frontPageWrapper.classList.toggle("hide");
-  //fill in the information for the book elements.
-  bookCard.style.background = data[index].color;
-  bookTitle.textContent = data[index].title;
-  bookAuthor.textContent = data[index].author;
 
   //find all the places where the information needs to be placed.
   BookCardInfo = document.querySelector(".information-page__bookCover");
