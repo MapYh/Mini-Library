@@ -20,10 +20,12 @@ let BookPagesnfo;
 let BookPublisherInfo;
 //Array to search for a book by title.
 let arrayOfBookNames = [];
-/*-----------Functions--------------*/
+/*-----------Functions-------------------------*/
+/*-----------Front-page functions--------------*/
 /*
 Function that creates elements for the front covers for the books,
-and the title and author.*/
+and the title and author.
+*/
 async function createElementsForBook() {
     //Get data from api.
     let data = await getApi(apiUrl);
@@ -52,7 +54,7 @@ function getInformationForBook(index, data) {
     bookCard.style.background = data[index].color;
     bookTitle.textContent = data[index].title;
     bookAuthor.textContent = data[index].author;
-    //adds the titles to ann array.
+    //adds the titles to an array.
     arrayOfBookNames.push(data[index].title);
 }
 //Function to add events to all the book covers on the first page.
@@ -61,6 +63,7 @@ function addEvents(i, data) {
         showMoreInformation(i, data);
     });
 }
+/*------------Information page functions-----------------------------*/
 function showMoreInformation(index, data) {
     //Change the background color for infopage and hide the front page and show the information page.
     document.body.style.background = "#222222";
@@ -108,15 +111,19 @@ function closeInformationPage() {
     //Change the background color back to white.
     document.body.style.background = "white";
 }
+/*-----------Search code--------------*/
 //The code below is used to search for a book using the search field.
 //The input from the search field.
 let search = document.querySelector("#search-field");
 search.addEventListener("input", function () {
     //splits the input into individual words or letter.
     let s = search.value.split(/\s+/);
-    //Compares the inpu to a array with all the title of the books and shows the
+    //Compares the input to a array with the titles of the books and shows the
     // books that match the search term the best.
     for (let i = 0; i < arrayOfBookNames.length; i++) {
+        /*
+        If a title to a book dosent contain the the search term the book i hiden.
+        */
         if (!s.every((x) => arrayOfBookNames[i].toLocaleLowerCase().includes(x))) {
             console.log(bookElements[i]);
             //Disables the display to the books that dont match the search term.
