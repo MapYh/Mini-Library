@@ -4,9 +4,10 @@ import { bookValues } from "./interface.js";
 import { getApi, apiUrl } from "./api.js";
 
 /*-----------Variables--------------*/
-let showMoreInformationpage = document.querySelectorAll(".hide");
-let backbutton = document.querySelector(".information-page__closingX");
-let frontPageWrapper = document.querySelector(".frontPage-wrapper");
+let showMoreInformationpage: NodeListOf<Element> =
+  document.querySelectorAll(".hide");
+let backbutton: Element = document.querySelector(".information-page__closingX");
+let frontPageWrapper: Element = document.querySelector(".frontPage-wrapper");
 let mainSectionForBooks: HTMLElement = document.querySelector(".main__books");
 let bookElements: NodeListOf<HTMLElement>;
 
@@ -52,6 +53,7 @@ async function createElementsForBook(): Promise<bookValues[]> {
     addEvents(i, data);
     getInformationForBook(i, data);
   }
+  //book element is a list of all the books on the page.
   bookElements = document.querySelectorAll(".main__book");
   //return data for the next function.
   return data;
@@ -75,7 +77,7 @@ function addEvents(i: number, data: bookValues[]): void {
 }
 
 /*------------Information page functions-----------------------------*/
-function showMoreInformation(index: number, data: bookValues[]) {
+function showMoreInformation(index: number, data: bookValues[]): void {
   //Change the background color for infopage and hide the front page and show the information page.
   document.body.style.background = "#222222";
   showMoreInformationpage[0].classList.toggle("hide");
@@ -114,7 +116,7 @@ backbutton.addEventListener("click", () => {
 });
 //Function that hides the book covers and the search field
 //when the information about a book is rendered on the page.
-function closeInformationPage() {
+function closeInformationPage(): void {
   //Show the front page again and hide the information page when clicking on the backbutton.
   showMoreInformationpage[0].classList.toggle("hide");
   frontPageWrapper.classList.toggle("hide");
@@ -133,12 +135,14 @@ search.addEventListener("input", function () {
 
   //Compares the input to a array with the titles of the books and shows the
   // books that match the search term the best.
-  for (let i = 0; i < arrayOfBookNames.length; i++) {
+  for (let i: number = 0; i < arrayOfBookNames.length; i++) {
     /*
-    If a title to a book dosent contain the the search term the book i hiden.  
+    If a title to a book dosent contain the the search term x the book is hidden.  
     */
+    console.log(bookElements);
     if (!s.every((x) => arrayOfBookNames[i].toLocaleLowerCase().includes(x))) {
       //Disables the display to the books that dont match the search term.
+      //PLus one to avoid the first element in ub the node list which isn't a book.
       bookElements[i + 1].style.display = "none";
     }
   }

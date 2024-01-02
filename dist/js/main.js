@@ -43,6 +43,7 @@ async function createElementsForBook() {
         addEvents(i, data);
         getInformationForBook(i, data);
     }
+    //book element is a list of all the books on the page.
     bookElements = document.querySelectorAll(".main__book");
     //return data for the next function.
     return data;
@@ -117,10 +118,12 @@ search.addEventListener("input", function () {
     // books that match the search term the best.
     for (let i = 0; i < arrayOfBookNames.length; i++) {
         /*
-        If a title to a book dosent contain the the search term the book i hiden.
+        If a title to a book dosent contain the the search term x the book is hidden.
         */
+        console.log(bookElements);
         if (!s.every((x) => arrayOfBookNames[i].toLocaleLowerCase().includes(x))) {
             //Disables the display to the books that dont match the search term.
+            //PLus one to avoid the first element in ub the node list which isn't a book.
             bookElements[i + 1].style.display = "none";
         }
     }
